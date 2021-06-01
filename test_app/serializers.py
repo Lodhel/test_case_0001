@@ -1,4 +1,3 @@
-from django.db import transaction
 from rest_framework import serializers
 from . import models
 
@@ -8,7 +7,6 @@ class InterviewSerializer(serializers.ModelSerializer):
         model = models.Interview
         fields = '__all__'
 
-    @transaction.atomic()
     def create(self, validated_data):
         instance = super().create(validated_data)
         instance.save()
@@ -20,7 +18,6 @@ class ChoiceSerializer(serializers.ModelSerializer):
         model = models.Choice
         fields = '__all__'
 
-    @transaction.atomic()
     def create(self, validated_data):
         instance = super().create(validated_data)
         instance.save()
@@ -32,7 +29,6 @@ class QuestionSerializer(serializers.ModelSerializer):
         model = models.Question
         fields = '__all__'
 
-    @transaction.atomic()
     def create(self, validated_data):
         instance = super().create(validated_data)
         instance.save()
@@ -44,7 +40,6 @@ class ChoiceAnswerSerializer(serializers.ModelSerializer):
         model = models.ChoiceAnswer
         fields = '__all__'
 
-    @transaction.atomic()
     def create(self, validated_data):
         instance = super().create(validated_data)
         instance.save()
