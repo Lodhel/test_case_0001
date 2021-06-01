@@ -51,3 +51,16 @@
 \
         choice_answer/ для получения вариантов ответа
             GET
+            в параметрах урл запроса
+            quest id вопроса, integer
+\
+        answer/ для создания ответа
+            POST
+
+            question id вопроса, integer
+            user id пользователя, integer
+            answer ответ, string
+            answers ответы, string
+\
+        answer/ для получения ответа
+            GET

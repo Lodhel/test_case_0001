@@ -9,6 +9,7 @@ router.register('interview', views.InterviewViewSet)
 router.register('choice', views.ChoiceViewSet)
 router.register('question', views.QuestionViewSet)
 router.register('choice_answer', views.ChoiceAnswerViewSet)
+router.register('answer', views.AnswerViewSet)
 
 urlpatterns = [
     url(r'', include(router.urls)),

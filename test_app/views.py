@@ -27,6 +27,20 @@ class ChoiceAnswerViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ChoiceAnswerSerializer
     queryset = models.ChoiceAnswer.objects.all()
 
+    def make_struct(self, data):
+        return {
+            'answer': data.answer
+        }
+
+    def list(self, request, *args, **kwargs):
+        question = request.query_params.get('quest', None)
+        instance = models.Answer.objects.filter(quest=question)
+        if question:
+            data = [self.make_struct(case) for case in instance]
+            return JsonResponse({'data': data})
+        else:
+            return super().list(request)
+
 
 class LoginAPIView(View):
     def post(self, request):
