@@ -13,27 +13,41 @@
         interview/ для создания опроса
             POST
 
-            title название
-            date_start  старта
-            date_end дата окончания
-            text_interview описание
+            title название, string
+            date_start  дата старта, string
+            date_end дата окончания, string
+            text_interview описание, string 
+\
+        interview/ для получения опросов
+            GET
+
 \
         choice/ для создания типа вопроса
             POST
 
-            title тип вопроса
+            title тип вопроса, string
+\
+        choice/ для получения типа вопроса
+            GET
+
 \
         question/ для создания вопроса
             POST
                         
-            interview название опроса
-            text_question текст вопроса
-            type_question тип вопроса
-            text_answer ответ текстом
+            interview id опроса, integer
+            text_question текст вопроса, string
+            type_question id типа вопроса, string
+\
+        question/ для получения вопросов
+            GET
+
 \
         choice_answer/ для создания варианта ответа
             POST
 
-            quest текст вопроса
-            answer выбор варианта
-            answers выбор вариантов
+            quest id вопроса, integer
+            answer выбор варианта, string
+            answers выбор вариантов, string
+\
+        choice_answer/ для получения вариантов ответа
+            GET

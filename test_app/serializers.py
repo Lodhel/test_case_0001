@@ -49,3 +49,9 @@ class ChoiceAnswerSerializer(serializers.ModelSerializer):
         instance = super().create(validated_data)
         instance.save()
         return instance
+
+
+class AnswerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Answer
+        fields = '__all__'
