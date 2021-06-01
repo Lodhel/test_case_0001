@@ -1,5 +1,6 @@
 from rest_framework.routers import DefaultRouter
 
+from django.conf.urls import url, include
 from . import views
 
 
@@ -8,3 +9,7 @@ router.register('interview', views.InterviewViewSet)
 router.register('choice', views.ChoiceViewSet)
 router.register('question', views.QuestionViewSet)
 router.register('choice_answer', views.ChoiceAnswerViewSet)
+
+urlpatterns = [
+    url(r'', include(router.urls)),
+]
