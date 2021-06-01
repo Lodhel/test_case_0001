@@ -12,4 +12,5 @@ router.register('choice_answer', views.ChoiceAnswerViewSet)
 
 urlpatterns = [
     url(r'', include(router.urls)),
+    url(r'^login/?$', views.LoginAPIView.as_view())
 ]
