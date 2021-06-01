@@ -4,7 +4,7 @@ from . import views
 
 
 router = DefaultRouter()
-router.register('profile', views.InterviewViewSet)
-router.register('login', views.ChoiceViewSet)
-router.register('category', views.QuestionViewSet)
-router.register('tag', views.ChoiceAnswerViewSet)
+router.register('interview', views.InterviewViewSet)
+router.register('choice', views.ChoiceViewSet)
+router.register('question', views.QuestionViewSet)
+router.register('choice_answer', views.ChoiceAnswerViewSet)
